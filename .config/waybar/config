@@ -1,0 +1,143 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 6,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock#date", "group/now_playing", "clock#time"],
+    "modules-right": ["group/tools", "group/keyboard", "group/hardware", "battery", "custom/logout", "custom/control_center"],
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "tray",
+            "pulseaudio"
+        ]
+    },
+
+    "group/keyboard": {
+        "orientation": "horizontal",
+        "modules": [
+            "keyboard-state#numlock",
+            "keyboard-state#capslock"
+        ]
+    },
+    "keyboard-state#capslock": {
+        "capslock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "C",
+            "unlocked": "C"
+        }
+    },
+    "keyboard-state#numlock": {
+        "numlock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "N",
+            "unlocked": "N"
+        }
+    },
+
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "active-only": false,
+        "format": "{name}"
+    },
+
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%I:%M:%S %p}",
+        "tooltip": false
+    },
+    "clock#date": {
+        "format": "{:%a, %b %e}",
+        "on-click": "/home/ravindra/.config/waybar/show_calendar.sh",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "group/now_playing": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/now_playing"
+        ]
+    },
+    "custom/now_playing": {
+        "format": "{}",
+        "exec": "/home/ravindra/.config/hypr/scripts/now_playing.sh",
+        "interval": 2,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 40
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "interval": 2,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "󰂄  {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/logout": {
+        "format": "Logout Menu",
+        "on-click": "wlogout --layout /home/ravindra/.config/wlogout/layout --css /home/ravindra/.config/wlogout/style.css -b 3",
+        "tooltip": false
+    },
+    "group/tools": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/cliphist",
+            "custom/shortcuts"
+        ]
+    },
+    "custom/shortcuts": {
+        "format": "⌨",
+        "on-click": "/home/ravindra/.config/hypr/scripts/bin/shortcuts_menu",
+        "tooltip": true,
+        "tooltip-format": "Keyboard Shortcuts"
+    },
+    "custom/cliphist": {
+        "format": "📋",
+        "on-click": "cliphist list | wofi -dmenu | cliphist decode | wl-copy",
+        "tooltip": false
+    },
+    "custom/control_center": {
+        "format": "⚙",
+        "on-click": "python3 /home/ravindra/.config/hypr/scripts/control_center.py",
+        "tooltip": true,
+        "tooltip-format": "Control Center"
+    },
+    "custom/tailscale": {
+        "format": "󰖂 {}",
+        "exec": "tailscale ip -4 2>/dev/null || echo 'Off'",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "Tailscale VPN"
+    }
+}

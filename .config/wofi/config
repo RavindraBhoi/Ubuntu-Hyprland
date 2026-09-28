@@ -1,0 +1,10 @@
+width=1000
+height=450
+columns=3
+allow_markup=true
+allow_images=true
+image_size=36
+term=kitty
+hide_scroll=true
+no_actions=true
+prompt=Search Apps...

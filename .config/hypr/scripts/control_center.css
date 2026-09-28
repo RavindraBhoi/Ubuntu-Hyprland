@@ -1,0 +1,154 @@
+@import url("/home/ravindra/.config/waybar/colors.css");
+
+#MainWindow {
+    background-color: alpha(@surface, 0.94);
+    border: 2px solid @primary;
+    border-radius: 24px;
+}
+
+#MainBox {
+    padding: 18px;
+}
+
+/* User Profile Header Card */
+#HeaderCard {
+    background-color: alpha(@surface_container, 0.7);
+    border-radius: 18px;
+    padding: 12px 16px;
+    border: 2px solid @primary;
+}
+
+#AvatarBox {
+    min-width: 52px;
+    min-height: 52px;
+    border-radius: 50%;
+    background-color: alpha(@primary, 0.2);
+    border: 2px solid @primary;
+}
+
+#UserNameLabel {
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: @on_surface;
+}
+
+#UptimeLabel {
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 12px;
+    color: @on_surface_variant;
+    opacity: 0.8;
+}
+
+/* Action Buttons (Lock, Power, Settings, Edit) */
+#ActionBtn {
+    background-image: none;
+    background-color: alpha(@surface_container_high, 0.6);
+    border: none;
+    border-radius: 50%;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    font-size: 16px;
+    color: @on_surface;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+#ActionBtn:hover {
+    background-image: none;
+    background-color: @primary;
+    color: @on_primary;
+}
+
+/* Sliders Section */
+#SliderBox {
+    background-color: alpha(@surface_container, 0.7);
+    border-radius: 18px;
+    padding: 8px 14px;
+    border: 2px solid @primary;
+}
+
+#SliderIcon {
+    font-size: 18px;
+    color: @primary;
+    min-width: 24px;
+}
+
+scale trough {
+    background-image: none;
+    background-color: alpha(@surface_variant, 0.6);
+    border-radius: 10px;
+    min-height: 12px;
+}
+
+scale highlight {
+    background-image: none;
+    background-color: @primary;
+    border-radius: 10px;
+}
+
+scale slider {
+    background-image: none;
+    background-color: @on_primary;
+    border: 2px solid @primary;
+    min-width: 18px;
+    min-height: 18px;
+    border-radius: 50%;
+    margin: -3px;
+}
+
+/* Large Quick Toggle Cards (Wi-Fi & Bluetooth) */
+#TileCard {
+    background-image: none;
+    background-color: alpha(@surface_container, 0.7);
+    border-radius: 18px;
+    padding: 12px 14px;
+    border: 2px solid @primary;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+#TileCard:hover {
+    background-image: none;
+    background-color: alpha(@surface_container_high, 0.9);
+    border: 2px solid @primary;
+}
+
+#TileIconBox {
+    background-color: alpha(@surface_variant, 0.6);
+    border-radius: 14px;
+    min-width: 44px;
+    min-height: 44px;
+    transition: all 0.2s ease;
+}
+
+#TileIconBox.active {
+    background-color: @primary;
+}
+
+#TileIcon {
+    font-family: "JetBrains Mono", "FontAwesome", sans-serif;
+    font-size: 20px;
+    color: @on_surface;
+    margin: 0;
+    padding: 0;
+}
+
+#TileIconBox.active #TileIcon {
+    color: @on_primary;
+}
+
+#TileTitle {
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: @on_surface;
+}
+
+#TileSubtitle {
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 11px;
+    color: @on_surface_variant;
+    opacity: 0.9;
+}

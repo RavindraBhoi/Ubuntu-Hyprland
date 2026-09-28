@@ -1,0 +1,66 @@
+@import url("/home/ravindra/.config/wofi/colors.css");
+
+* {
+    font-family: "JetBrains Mono", "Roboto", "FiraCode Nerd Font", sans-serif;
+    font-size: 13px;
+    box-shadow: none;
+}
+
+window {
+    margin: 0px;
+    border-radius: 24px;
+    background-color: alpha(@surface, 0.85);
+    color: @on_surface;
+    border: 2px solid @primary;
+}
+
+#input {
+    margin: 24px 24px 10px 24px;
+    padding: 16px 20px;
+    background-color: alpha(@surface_variant, 0.5);
+    color: @on_surface_variant;
+    border: 2px solid alpha(@outline, 0.3);
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#inner-box {
+    margin: 0px;
+    padding: 0px;
+}
+
+#outer-box {
+    margin: 0px;
+}
+
+#scroll {
+    margin: 14px 24px 24px 24px;
+}
+
+#text {
+    margin: 10px;
+    color: @on_surface;
+}
+
+#entry {
+    padding: 8px;
+    border-radius: 16px;
+    margin: 4px;
+    background-color: transparent;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+#entry:hover {
+    background-color: @surface_variant;
+}
+
+#entry:selected {
+    background-color: @primary;
+}
+
+#entry:selected #text {
+    color: @on_primary;
+    font-weight: bold;
+}

@@ -1,0 +1,247 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Roboto", "FiraCode Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @on_surface;
+}
+
+tooltip {
+    background: @surface_container;
+    border-radius: 12px;
+    border: 1px solid @outline;
+}
+tooltip label {
+    color: @on_surface;
+}
+
+#workspaces {
+    padding: 0px;
+    margin: 2px 4px;
+    border-radius: 20px;
+    background-color: @surface_variant;
+    color: @on_surface;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button {
+    padding: 2px 14px;
+    background: transparent;
+    color: @on_surface_variant;
+    border-radius: 20px;
+    margin: 0px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@on_surface, 0.12);
+    border-radius: 20px;
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary;
+    padding: 2px 14px;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+#window, #clock, #mpris, #group-now_playing, #hardware, #system, #battery, #tray, #custom-logout, #custom-control_center, #tools, #keyboard {
+    padding: 1px 14px;
+    margin: 2px 4px;
+    border-radius: 20px;
+    background-color: @surface_variant;
+    color: @on_surface;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#tray, #pulseaudio {
+    padding: 0 8px;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+}
+
+#clock, #keyboard, #tools {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+#tools {
+    padding: 1px 4px;
+}
+
+#custom-cliphist, #custom-shortcuts {
+    padding: 1px 10px;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#custom-cliphist:hover, #custom-shortcuts:hover, #custom-expand:hover {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+@keyframes android_charge {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#battery.charging {
+    background: linear-gradient(90deg, @surface, @primary, @surface);
+    background-size: 200% 200%;
+    animation: android_charge 2s ease infinite;
+    color: @on_primary;
+}
+
+#battery.warning {
+    background-color: @error_container;
+    color: @on_error_container;
+}
+
+#battery.critical {
+    background-color: @error;
+    color: @on_error;
+}
+
+#custom-logout {
+    padding: 1px 14px;
+    transition: all 0.3s ease;
+}
+
+#custom-logout:hover {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#custom-cliphist {
+    padding: 1px 14px;
+    transition: all 0.3s ease;
+}
+
+#custom-cliphist:hover, #custom-expand:hover {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#group-expand {
+    background-color: @surface_variant;
+    border-radius: 20px;
+    margin: 2px 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0 4px;
+}
+
+#custom-expand {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 1px 10px;
+}
+#keyboard-state, #keyboard-state-numlock, #keyboard-state-capslock {
+    padding: 0;
+    margin: 0;
+}
+
+#custom-expand {
+    color: @primary;
+    font-weight: 900;
+}
+#keyboard-state label, #keyboard-state-numlock label, #keyboard-state-capslock label {
+    margin: 0 1px;
+    padding: 0 4px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#keyboard, #custom-cliphist {
+    padding: 1px 8px;
+}
+
+
+#custom-ws1, #custom-ws2, #custom-ws3, #custom-ws4, #custom-ws5, #custom-ws6, #custom-ws7, #custom-ws8, #custom-ws9, #custom-ws10 {
+    padding: 1px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    color: @on_surface;
+    background-color: transparent;
+}
+
+#custom-ws1.active, #custom-ws2.active, #custom-ws3.active, #custom-ws4.active, #custom-ws5.active, #custom-ws6.active, #custom-ws7.active, #custom-ws8.active, #custom-ws9.active, #custom-ws10.active {
+    background-color: @primary;
+    color: @on_primary;
+    font-weight: bold;
+}
+
+#custom-ws1:hover, #custom-ws2:hover, #custom-ws3:hover, #custom-ws4:hover, #custom-ws5:hover, #custom-ws6:hover, #custom-ws7:hover, #custom-ws8:hover, #custom-ws9:hover, #custom-ws10:hover {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#keyboard-state label.locked, #keyboard-state-numlock label.locked, #keyboard-state-capslock label.locked {
+    background-color: @primary;
+    color: @on_primary;
+    font-weight: 900;
+}
+
+#cpu, #memory, #temperature {
+    margin: 0 5px;
+}
+
+#keyboard-state label.unlocked, #keyboard-state-numlock label.unlocked, #keyboard-state-capslock label.unlocked {
+    color: @on_primary_container;
+    opacity: 0.5;
+}
+
+#group-now_playing {
+    background-color: @surface_container;
+    border-radius: 16px;
+    padding: 0px 8px;
+    margin: 0px 4px;
+}
+
+#custom-now_playing {
+    padding: 0px 4px;
+    color: @on_surface;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+#custom-lid {
+    padding: 1px 14px;
+    margin: 0px 2px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+#custom-lid.enabled {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+#custom-lid.disabled {
+    background-color: transparent;
+    color: @on_surface;
+    opacity: 0.7;
+}
+
+#custom-lid:hover {
+    background-color: @primary;
+    color: @on_primary;
+    opacity: 1;
+}
+
+

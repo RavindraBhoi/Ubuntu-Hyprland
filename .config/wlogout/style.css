@@ -1,0 +1,57 @@
+@import url("/home/ravindra/.config/waybar/colors.css");
+
+* {
+    font-family: "JetBrains Mono", "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    background-image: none;
+    transition: background-color 0.2s, border 0.2s;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark dimming overlay */
+}
+
+button {
+    color: @on_surface;
+    background-color: alpha(@surface, 0.8);
+    border: 2px solid alpha(@outline, 0.5);
+    border-radius: 40px;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: 25%;
+    min-height: 180px;
+}
+
+button:focus, button:active, button:hover {
+    color: @primary;
+    background-color: alpha(@surface, 0.9);
+    border: 3px solid @primary;
+    box-shadow: 0 0 20px alpha(@primary, 0.5);
+}
+
+/* Specific Icons */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#firmware {
+    background-image: image(url("/home/ravindra/.config/wlogout/icons/firmware.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
