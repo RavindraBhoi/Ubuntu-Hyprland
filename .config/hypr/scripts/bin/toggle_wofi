@@ -2,5 +2,5 @@
 if pgrep -x "wofi" > /dev/null; then
     killall wofi
 else
-    wofi --show drun &
+    hyprctl dispatch exec "wofi --show drun"
 fi
