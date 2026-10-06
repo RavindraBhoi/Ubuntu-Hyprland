@@ -1,0 +1,68 @@
+position = "Top"
+layer = "Top"
+enable_esc_key = true
+
+[modules]
+left = ["launcher", "Workspaces", "WindowTitle"]
+center = ["Tempo"]
+right = [["SystemInfo", "Settings"], ["clipboard", "keybindings"], "Tray"]
+
+[appearance]
+font_name = "JetBrains Mono"
+scale_factor = 1.15
+opacity = 0.92
+blur = "always"
+background_color = "{{colors.surface.default.hex}}"
+text_color = "{{colors.on_surface.default.hex}}"
+workspace_colors = ["{{colors.primary.default.hex}}", "{{colors.secondary.default.hex}}", "{{colors.tertiary.default.hex}}", "{{colors.primary_container.default.hex}}"]
+
+[appearance.primary_color]
+base = "{{colors.primary.default.hex}}"
+strong = "{{colors.primary_container.default.hex}}"
+weak = "{{colors.surface_variant.default.hex}}"
+text = "{{colors.on_primary.default.hex}}"
+
+[appearance.danger_color]
+base = "{{colors.error.default.hex}}"
+strong = "{{colors.error_container.default.hex}}"
+weak = "{{colors.surface_variant.default.hex}}"
+text = "{{colors.on_error.default.hex}}"
+
+[appearance.bar]
+surface = "transparent"
+radius = "none"
+margin = "none"
+
+[appearance.menu]
+backdrop = 0.35
+
+[workspaces]
+visibility_mode = "All"
+group_by_monitor = false
+enable_workspace_filling = false
+disable_special_workspaces = false
+
+[window_title]
+mode = "Title"
+truncate_title_after_length = 80
+
+[tempo]
+clock_format = "%a, %b %d  %H:%M"
+
+[[CustomModule]]
+name = "clipboard"
+type = "Button"
+icon = "󰅍"
+command = "cliphist list | wofi -dmenu | cliphist decode | wl-copy"
+
+[[CustomModule]]
+name = "keybindings"
+type = "Button"
+icon = "⌨"
+command = "/home/ravindra/.config/hypr/scripts/bin/shortcuts_menu"
+
+[[CustomModule]]
+name = "launcher"
+type = "Button"
+icon = ""
+command = "wofi --show drun"
