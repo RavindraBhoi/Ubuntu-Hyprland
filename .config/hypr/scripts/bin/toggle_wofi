@@ -2,5 +2,5 @@
 if pgrep -x "wofi" > /dev/null; then
     killall wofi
 else
-    hyprctl dispatch exec "wofi --show drun"
+    hyprctl dispatch 'hl.dsp.exec_cmd("wofi --show drun")'
 fi
